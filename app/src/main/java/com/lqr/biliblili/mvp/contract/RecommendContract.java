@@ -13,9 +13,7 @@ import io.reactivex.Observable;
 public interface RecommendContract {
 
     interface View extends IView {
-
         void setRecyclerAdapter(RecommendMultiItemAdapter adapter);
-
         void recyclerScrollToPosition(int position);
     }
 
@@ -27,8 +25,6 @@ public interface RecommendContract {
          * @return
          */
         Observable<IndexData> getRecommendIndexData(int idx, boolean refresh, boolean clearCache);
-
         List<RecommendMultiItem> parseIndexData(IndexData indexData);
-
     }
 }
