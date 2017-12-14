@@ -11,4 +11,7 @@
         <attr name="refresh_btn_iconSize" format="dimension"/>
         <attr name="refresh_btn_space4TextAndIcon" format="dimension"/>
     </declare-styleable>
+
+    <!--面试模块字符串-->
+
 </resources>

@@ -3,12 +3,12 @@ package com.lqr.biliblili.mvp.ui.adapter.entity;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 public class LiveMultiItem implements MultiItemEntity {
-
+    //类型标示
     public static final int TITLE = 1;
     public static final int ITEM = 2;
     public static final int BANNER = 3;
     public static final int BOTTOM = 4;
-
+    //一些特性
     private int itemType;
     private int spanSize;
     private boolean isOdd;// 用于判断ITEM部分是左是右

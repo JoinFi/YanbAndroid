@@ -18,6 +18,7 @@ public class InterviewModule {
         this.view = view;
     }
 
+    //下面每个方法就是一个提供方
     @FragmentScope
     @Provides
     public InterviewContract.View provideView() {

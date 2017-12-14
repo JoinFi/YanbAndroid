@@ -3,6 +3,8 @@ package com.lqr.biliblili.mvp.contract;
 import com.jess.arms.mvp.IModel;
 import com.jess.arms.mvp.IView;
 import com.lqr.biliblili.app.data.entity.interview.InterViewListData;
+import com.lqr.biliblili.mvp.ui.adapter.InterviewMultiItemAdapter;
+import com.lqr.biliblili.mvp.ui.adapter.entity.InterviewMultiItem;
 
 import java.util.List;
 
@@ -13,11 +15,11 @@ import java.util.List;
 public interface InterviewContract {
     //view层
     interface View extends IView{
-        void initRecycleView();//初始化recycleview
+        void setRecycleAdapter(InterviewMultiItemAdapter adapter);//初始化recycleview
     }
     //modle层
     interface Model extends IModel{
-        List<InterViewListData> getListData();
+        List<InterviewMultiItem> getListData();
     }
 
 }

@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <com.lqr.biliblili.mvp.ui.widget.AutoCardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12px"
+        android:layout_marginLeft="14px"
+        android:layout_marginRight="14px"
+        android:layout_marginTop="14px"
+        app:cardCornerRadius="@dimen/common_card_view_radius"
+        app:cardElevation="@dimen/common_view_elevation">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/item_interview_body_img"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_video_pic"/>
+
+            <TextView
+                android:id="@+id/item_interview_body_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_text_margin_live"
+                android:textColor="@color/item_title_text_live"
+                android:textSize="@dimen/common_text_size"/>
+        </LinearLayout>
 
 
-</LinearLayout>
+
+    </com.lqr.biliblili.mvp.ui.widget.AutoCardView>
+
+</com.zhy.autolayout.AutoFrameLayout>

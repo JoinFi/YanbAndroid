@@ -4,6 +4,9 @@ import android.widget.BaseAdapter;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.jess.arms.di.component.AppComponent;
+import com.jess.arms.http.imageloader.glide.ImageConfigImpl;
+import com.jess.arms.utils.ArmsUtils;
 import com.lqr.biliblili.R;
 import com.lqr.biliblili.mvp.ui.adapter.entity.InterviewMultiItem;
 
@@ -15,20 +18,41 @@ import java.util.List;
  */
 
 public class InterviewMultiItemAdapter extends BaseMultiItemQuickAdapter<InterviewMultiItem,BaseViewHolder>{
-    /**
-     * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
-     *
-     * @param data A new list is created out of this one to avoid mutable list
-     */
+    private AppComponent mAppComponent;
     public InterviewMultiItemAdapter(List<InterviewMultiItem> data) {
         super(data);
+        addItemType(InterviewMultiItem.TITLE, R.layout.item_m_h_interview_title);
         addItemType(InterviewMultiItem.BODY, R.layout.item_m_h_interview_body);
-        addItemType(InterviewMultiItem.BODY, R.layout.item_m_h_interview_title);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, InterviewMultiItem item) {
-
+        if (mAppComponent == null){
+            mAppComponent = ArmsUtils.obtainAppComponentFromContext(mContext);
+        }
+        switch (item.getItemType()){
+            case InterviewMultiItem.TITLE:
+                mAppComponent
+                        .imageLoader()
+                        .loadImage(mContext, ImageConfigImpl
+                                .builder()
+                                .imageView(helper.getView(R.id.item_interview_title_img))
+                                .url("https://www.baidu.com/img/bd_logo1.png")
+                                .build());
+                helper.setText(R.id.item_interview_title_tv, item.getTitleContent());
+                break;
+            case InterviewMultiItem.BODY:
+                mAppComponent
+                        .imageLoader()
+                        .loadImage(mContext, ImageConfigImpl
+                                .builder()
+                                .imageView(helper.getView(R.id.item_interview_body_img))
+                                .url("https://www.baidu.com/img/bd_logo1.png")
+                                .build());
+                helper.setText(R.id.item_interview_body_tv, item.getTitleContent());
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--常用-->
+    <dimen name="common_card_view_radius">8px</dimen>
+    <dimen name="common_view_elevation">2px</dimen>
+    <dimen name="common_text_size">14px</dimen>
     <!--MainActivity:侧边栏-->
     <dimen name="nav_bottom_rect_height">100px</dimen>
     <dimen name="nav_bottom_img">75px</dimen>
